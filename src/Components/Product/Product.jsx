@@ -17,7 +17,7 @@ console.log(props)
        
      
       onClick={() => {
-        props.method(props.id)
+        props.method1(props.id)
       }
       } 
         
@@ -25,11 +25,11 @@ console.log(props)
       
        <button
        
-        onClick={() => {
-          alert("GoodBye !!")
-        }
-        }
-        className="hover:bg-sky-700 text-gray-50 bg-sky-800 py-2 rounded-md">Delete</button>
+       onClick={() => {
+         props.method2(props.id)
+       }
+       }
+      className="hover:bg-sky-700 text-gray-50 bg-sky-800 py-2 rounded-md">Delete</button>
       
       </div>
     </div>

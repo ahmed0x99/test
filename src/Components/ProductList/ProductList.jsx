@@ -32,11 +32,25 @@ export default function ProductList() {
     ])
     function UpdateState(id){
         // copy
-        let newArr = [... products]
-        // update-delete
+        let newArr = [...products]
+        // update
         newArr[id - 1].count ++
         // replace
         setProducts(newArr)
+    }
+    
+    
+    function deleteProduct(id){
+        // copy
+        let newArr = [...products]
+        // delete
+        newArr = newArr.filter((el) => {
+          return  el.id !== id
+        }
+    )
+    // replace
+    setProducts(newArr)
+       
     }
 
     // Git & Github -----> 
@@ -66,13 +80,12 @@ export default function ProductList() {
     //     console.log(products)
     // }
 
-    let x = 5
 
     return (
     <div className='flex items-center justify-evenly flex-wrap'>   
    {
     products.map((currentItem , index) => {
-      return <Product element = {currentItem} method = {UpdateState} id ={currentItem.id}   />
+      return <Product element = {currentItem} method1 = {UpdateState} method2 = {deleteProduct} id ={currentItem.id}   />
     }
     )
 }
